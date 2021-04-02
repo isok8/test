@@ -62,12 +62,12 @@ jobs:
     - name: "销毁流程"
       uses: okteto/destroy-pipeline@master
       with:
-        name: okteto-pipeline
+        name: okteto/pipeline
         
     - name: "触发流程"
       uses: okteto/pipeline@master
       with:
-        name: okteto-pipeline
+        name: okteto/pipeline
         
     - name: "上传至okteto"
       uses: okteto/push@master
