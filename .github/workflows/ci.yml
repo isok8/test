@@ -60,6 +60,12 @@ jobs:
         名字: jiaosir-cn
 
 
+    - name: "销毁流程"
+      uses: okteto/destroy-pipeline@master
+      with:
+        namespace: jiaosir-cn
+        name: xray-okteto
+
         
     - name: "触发流程"
       uses: okteto/pipeline@master
