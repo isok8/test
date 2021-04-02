@@ -73,4 +73,4 @@ jobs:
       uses: okteto/push@master
       with:
         namespace: danxiaonuo
-        name: v2ray-okteto
+        name: xray-okteto
