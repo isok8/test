@@ -4,9 +4,9 @@ FROM golang:alpine AS builder
 # 修改源
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 # 安装相关环境依赖
-RUN apk update && apk add --no-cache git bash wget curl
+RUN apk update && apk add --no-cache git bash wget curl unzip
 # 运行工作目录
-WORKDIR /go/src/v2ray.com/core
+WORKDIR /go/src/xray.com/core
 # 克隆源码运行安装
 RUN wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -O /tmp/latest-Xray.zip
 
@@ -28,7 +28,7 @@ RUN apk add -U tzdata \
 && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
 && echo ${TZ} > /etc/timezone
 
-# 拷贝v2ray二进制文件至临时目录
+# 拷贝xray二进制文件至临时目录
 COPY --from=builder /tmp/latest-Xray.zip /tmp
 
 # 授予文件权限
@@ -48,5 +48,5 @@ ENV PATH /usr/bin/xray:$PATH
 # 拷贝配置文件
 COPY config.json /etc/xray/config.json
 
-# 运行v2ray
+# 运行xray
 CMD ["xray", "-config=/etc/xray/config.json"]
