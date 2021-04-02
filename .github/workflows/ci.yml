@@ -60,7 +60,7 @@ jobs:
         名字: jiaosir-cn
 
 
-    - name: "销毁流程"
+    - 名字: "删除管道流程"
       uses: okteto/destroy-pipeline@master
       with:
         namespace: jiaosir-cn
