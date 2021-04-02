@@ -59,10 +59,7 @@ jobs:
       with:
         名字: jiaosir-cn
 
-    - name: "销毁流程"
-      uses: okteto/destroy-pipeline@master
-      with:
-        name: pr-${{ github.event.number }}
+
         
     - name: "触发流程"
       uses: okteto/pipeline@master
