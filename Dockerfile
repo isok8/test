@@ -29,22 +29,24 @@ RUN apk add -U tzdata \
 && echo ${TZ} > /etc/timezone
 
 # 拷贝v2ray二进制文件至临时目录
-COPY --from=builder /tmp/v2ray.tgz /tmp
+COPY --from=builder /tmp/latest-Xray.zip /tmp
 
 # 授予文件权限
 RUN set -ex && \
     apk --no-cache add ca-certificates && \
     mkdir -p /usr/bin/xray /etc/xray && \
-    unzip -o -d /usr/bin/xray latest-Xray.zip && \
-    rm -rf /tmp/v2ray.tgz /usr/bin/v2ray/*.sig /usr/bin/v2ray/doc /usr/bin/v2ray/*.json /usr/bin/v2ray/*.dat /usr/bin/v2ray/sys* && \
-    chmod +x /usr/bin/v2ray/v2ctl && \
-    chmod +x /usr/bin/v2ray/v2ray
+    unzip -o -d /usr/bin/xray /tmp/latest-Xray.zip && \
+    rm -rf /tmp/latest-Xray.zip /usr/bin/xray/*.sig /usr/bin/xray/doc /usr/bin/xray/*.json /usr/bin/xray/*.dat /usr/bin/xray/sys* && \
+    chmod +x /usr/bin/xray/xray
+
+
+
 
 # 设置环境变量
-ENV PATH /usr/bin/v2ray:$PATH
+ENV PATH /usr/bin/xray:$PATH
 
 # 拷贝配置文件
-COPY config.json /etc/v2ray/config.json
+COPY config.json /etc/xray/config.json
 
 # 运行v2ray
-CMD ["v2ray", "-config=/etc/v2ray/config.json"]
+CMD ["xray", "-config=/etc/xray/config.json"]
