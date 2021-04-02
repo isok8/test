@@ -2,8 +2,8 @@
 # https://github.com/danxiaonuo/v2ray-okteto
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
-# Author: danxiaonuo
-# Blog: https://www.danxiaonuo.com
+# Author: 
+# Blog: https://www.
 #=================================================
 
 # 编译的名称
@@ -57,7 +57,7 @@ jobs:
     - name: "激活命名空间"
       uses: okteto/namespace@master
       with:
-        name: danxiaonuo
+        name: jiaosir
 
     - name: "销毁流程"
       uses: okteto/destroy-pipeline@master
