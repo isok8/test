@@ -10,6 +10,7 @@
 name: 自动部署okteto
 
 on:
+  workflow_dispatch:
   repository_dispatch:
 
 # 编辑文件触发开始编译
