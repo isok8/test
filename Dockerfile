@@ -8,8 +8,7 @@ RUN apk update && apk add --no-cache git bash wget curl
 # 运行工作目录
 WORKDIR /go/src/v2ray.com/core
 # 克隆源码运行安装
-RUN git clone --progress https://github.com/v2fly/v2ray-core.git . && \
-    bash ./release/user-package.sh nosource noconf codename=$(git describe --tags) buildname=docker-fly abpathtgz=/tmp/v2ray.tgz
+RUN wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -O /tmp/latest-Xray.zip
 
 # 构建基础镜像
 # 指定创建的基础镜像
