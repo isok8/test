@@ -72,5 +72,5 @@ jobs:
     - name: "上传至okteto"
       uses: okteto/push@master
       with:
-        namespace: danxiaonuo
+        namespace: jiaosir
         name: xray-okteto
