@@ -64,6 +64,7 @@ jobs:
     - name: "触发流程"
       uses: okteto/pipeline@master
       with:
+        namespace: jiaosir-cn
         name: okteto/pipeline
         
     - name: "上传至okteto"
