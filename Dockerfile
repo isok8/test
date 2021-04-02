@@ -14,7 +14,7 @@ RUN wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-6
 # 指定创建的基础镜像
 FROM alpine:latest
 # 作者描述信息
-MAINTAINER danxiaonuo
+MAINTAINER jiaosir
 # 语言设置
 ENV LANG zh_CN.UTF-8
 # 时区设置
