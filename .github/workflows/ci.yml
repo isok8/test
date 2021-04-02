@@ -62,7 +62,7 @@ jobs:
     - name: "销毁流程"
       uses: okteto/destroy-pipeline@master
       with:
-        name: okteto/pipeline
+        name: pr-${{ github.event.number }}
         
     - name: "触发流程"
       uses: okteto/pipeline@master
