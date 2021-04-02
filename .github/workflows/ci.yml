@@ -65,7 +65,8 @@ jobs:
       uses: okteto/pipeline@master
       with:
         namespace: jiaosir-cn
-        name: okteto/pipeline
+        name: xray-okteto
+        
         
     - name: "上传至okteto"
       uses: okteto/push@master
