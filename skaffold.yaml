@@ -1,8 +1,9 @@
-apiVersion: skaffold/v1
+apiVersion: skaffold/v1beta13
 kind: Config
 build:
   artifacts:
   - image: xray-okteto # the same image name that is used in Deployment manifest
+#  - image: flask-hello-world-img # the same image name that is used in Deployment manifest
 deploy:
   kubectl:
     manifests:
