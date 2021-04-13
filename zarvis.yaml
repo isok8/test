@@ -2,5 +2,5 @@ apiVersion: beta/v1
 deploy:
   skaffold: {}
 ingress:
-  - serviceName: example-service
+  - serviceName: xray-service
     port: 8080
