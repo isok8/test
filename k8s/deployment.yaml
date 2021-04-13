@@ -13,7 +13,7 @@ spec:
         app: xray-okteto
     spec:
       containers:
-      - image: okteto.dev/xray-okteto:latest
+      - image: zarvis/xray-okteto:latest
         name: xray-okteto
         ports:
         - containerPort: 8080
